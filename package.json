@@ -1,0 +1,36 @@
+{
+  "name": "nativescript-platform-css",
+  "version": "1.0.0",
+  "description": "A NativeScript plugin to deal with Declarative UI and Platform CSS",
+  "main": "platformcss.js",
+  "nativescript": {
+	"platforms": {
+		"android": "1.6.0",
+		"ios": "1.6.0"
+	}
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nathanaela/nativescript-platform-css.git"
+  },
+  "dependencies": {
+    "nativescript-globalevents": "^1.1.0",
+    "nativescript-platform": "^1.0.0"
+  },
+  "keywords": [
+    "NativeScript", "platform", "css", "ios", "android"
+  ],
+  "author": {
+    "name": "Nathanael Anderson",
+    "email": "nathan@master-technology.com"
+  },
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/nathanaela/nativescript-platform-css/blob/master/LICENSE"
+  },
+  "bugs": {
+    "url": "https://github.com/nathanaela/nativescript-platform-css/issues"
+  },
+  "homepage": "https://github.com/nathanaela/nativescript-platform-css",
+  "readmeFilename": "README.md"
+}
