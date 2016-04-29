@@ -7,7 +7,7 @@ This is released under the MIT License, meaning you are free to include this in 
 
 
 ## What is it?
-What this does is automatically add "android" or "ios" to the current **Page**'s cssClass variable, this allows you to do
+What this does is automatically add "android", "windows" or "ios" to the current **Page**'s cssClass variable, this allows you to do
 
     Declarative UI:
     <Page><Label class="awesome" text="Awesome"></Page>
@@ -17,7 +17,7 @@ What this does is automatically add "android" or "ios" to the current **Page**'s
     .android .awesome { background-color: green; }
     .windows .awesome { background-color: red; }
 
-Automatically on iOS the color would be blue, on aAdroid platforms the color would be green and on Windows it would be red.
+Automatically on iOS the color would be blue, on Android the color would be green and finally on Windows it would be red.
 
 
 ## Installation 
@@ -52,7 +52,7 @@ StackLayout {
 }
 ```
 
-So on ios the background would be red, on a android the color is green.
+So on ios and windows the background would be red, on a android the color is green.
 
 ## Why use this?
 You can set ALL the normal CSS values this way include width, height, font-size.  This allows you to reuse the majority of your css without having to have separate files.
