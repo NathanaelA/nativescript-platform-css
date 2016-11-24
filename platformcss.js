@@ -5,7 +5,7 @@
  * I do contract work in most languages, so let me solve your problems!
  *
  * Any questions please feel free to email me or put a issue up on the github repo
- * Version 0.0.1                                      Nathan@master-technology.com
+ * Version 1.3.0                                      Nathan@master-technology.com
  *********************************************************************************/
 "use strict";
 
@@ -15,22 +15,43 @@
 var Page = require('ui/page').Page;
 require('nativescript-globalevents');
 require('nativescript-platform');
+var utils = require('utils/utils');
 
 /**
  * Function that adds the proper class when we navigate to a new page
  * @param args
  */
+var deviceInfo;
+
 var setDevice = function(args) {
     var currentPage = args.object;
 
     var device;
-    switch (nsPlatform.platform) {
-        case nsPlatform.type.IOS:
-            device = 'ios'; break;
-        case nsPlatform.type.ANDROID:
-            device = 'android'; break;
-        case nsPlatform.type.WINDOWS:
-            device = 'windows'; break;
+    if (!deviceInfo) {
+
+
+        switch (nsPlatform.platform) {
+            case nsPlatform.type.IOS:
+                device = 'ios ios';
+                // We need to detect the smallest dimention to detect dpi.
+                var width = iOSProperty(UIScreen, UIScreen.mainScreen).bounds.size.width;
+                var height = iOSProperty(UIScreen, UIScreen.mainScreen).bounds.size.height;
+                if (width < height) {
+                    device += width;
+                } else {
+                    device += height;
+                }
+                break;
+            case nsPlatform.type.ANDROID:
+                device = 'android android'+getAndroidDPS();
+                break;
+            case nsPlatform.type.WINDOWS:
+                device = 'windows'; break;
+        }
+
+        deviceInfo = device;
+    } else {
+        device = deviceInfo;
     }
 
     if (currentPage) {
@@ -45,4 +66,31 @@ var setDevice = function(args) {
 
 // Setup Events
 Page.on(Page.navigatingToEvent, setDevice);
+
+// ---------------------------------------------------------------
+// Getting ios Property
+// ---------------------------------------------------------------
+function iOSProperty(_this, property) {
+    if (typeof property === "function") {
+        return property.call(_this);
+    }
+    else {
+        return property;
+    }
+}
+
+// ---------------------------------------------------------------
+// Getting Android DPS
+// ---------------------------------------------------------------
+function getAndroidDPS() {
+    var context = utils.ad.getApplicationContext();
+    var metrics = new android.util.DisplayMetrics();
+    context.getSystemService(android.content.Context.WINDOW_SERVICE).getDefaultDisplay().getRealMetrics(metrics);
+
+    // We need to detect the smallest dimention to detect dpi.
+    var width = parseInt(metrics.widthPixels / metrics.density,10);
+    var height = parseInt(metrics.heightPixels / metrics.density,10);
+    if (height < width) { return (height); }
+    return (width);
+}
 
