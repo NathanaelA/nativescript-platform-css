@@ -69,3 +69,5 @@ You can set ALL the normal CSS values this way include width, height, font-size.
 
 ### Notes
 There is also a related plugin called NativeScript-orientation that automatically will do the same type of CSS coolness for dealing with device orientation.
+
+If you want to style the Page view itself, just do .android or .ios.
