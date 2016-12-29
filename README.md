@@ -66,6 +66,10 @@ So on ios and windows the background would be red, on a android the color is gre
 ## Why use this?
 You can set ALL the normal CSS values this way include width, height, font-size.  This allows you to reuse the majority of your css without having to have separate files.
 
+## Enhanced modes
+This plugin in addition to doing .android or .ios; will create a .ios or .androidXXX (where XXX is the DPI of the screen) an
+
+
 
 ### Notes
 There is also a related plugin called NativeScript-orientation that automatically will do the same type of CSS coolness for dealing with device orientation.

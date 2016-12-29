@@ -5,57 +5,73 @@
  * I do contract work in most languages, so let me solve your problems!
  *
  * Any questions please feel free to email me or put a issue up on the github repo
- * Version 1.3.0                                      Nathan@master-technology.com
+ * Version 1.4.0                                      Nathan@master-technology.com
  *********************************************************************************/
 "use strict";
 
 /* jshint camelcase: false */
 /* global android, NSStringm, nsPlatform */
 
-var Page = require('ui/page').Page;
+const Page = require('ui/page').Page;
 require('nativescript-globalevents');
 require('nativescript-platform');
-var utils = require('utils/utils');
 
 /**
  * Function that adds the proper class when we navigate to a new page
  * @param args
  */
-var deviceInfo;
+let deviceInfo, sizeGroupings = false;
+let groupings = [1280,1024,800,600,540,480,400,360,320];
 
-var setDevice = function(args) {
-    var currentPage = args.object;
+const setDevice = function(args) {
+    const currentPage = args.object;
 
-    var device;
+    let device;
     if (!deviceInfo) {
-
-
         switch (nsPlatform.platform) {
             case nsPlatform.type.IOS:
                 device = 'ios ios';
-                // We need to detect the smallest dimention to detect dpi.
-                var width = iOSProperty(UIScreen, UIScreen.mainScreen).bounds.size.width;
-                var height = iOSProperty(UIScreen, UIScreen.mainScreen).bounds.size.height;
-                if (width < height) {
-                    device += width;
-                } else {
-                    device += height;
-                }
                 break;
+
             case nsPlatform.type.ANDROID:
-                device = 'android android'+getAndroidDPS();
+                device = 'android android';
                 break;
+
             case nsPlatform.type.WINDOWS:
-                device = 'windows'; break;
+                device = 'windows';
+                break;
         }
 
-        deviceInfo = device;
+		const screen = nsPlatform.screen();
+
+		if (sizeGroupings) {
+			let size = (screen.width < screen.height ? screen.width : screen.height);
+			let found = false;
+			for (let i=0;i<groupings.length;i++) {
+				if (size >= groupings[i]) {
+					device += groupings[i];
+					found = true;
+					break;
+				}
+			}
+			if (!found) {
+				device += size;
+			}
+		} else {
+			if (screen.width < screen.height) {
+				device += screen.width;
+			} else {
+				device += screen.height;
+			}
+		}
+
+		deviceInfo = device;
     } else {
         device = deviceInfo;
     }
 
     if (currentPage) {
-        var data = currentPage.cssClass || '';
+        const data = currentPage.cssClass || '';
         if (data.length) {
             currentPage.cssClass = data + ' ' + device;
         } else {
@@ -67,30 +83,28 @@ var setDevice = function(args) {
 // Setup Events
 Page.on(Page.navigatingToEvent, setDevice);
 
-// ---------------------------------------------------------------
-// Getting ios Property
-// ---------------------------------------------------------------
-function iOSProperty(_this, property) {
-    if (typeof property === "function") {
-        return property.call(_this);
-    }
-    else {
-        return property;
-    }
-}
-
-// ---------------------------------------------------------------
-// Getting Android DPS
-// ---------------------------------------------------------------
-function getAndroidDPS() {
-    var context = utils.ad.getApplicationContext();
-    var metrics = new android.util.DisplayMetrics();
-    context.getSystemService(android.content.Context.WINDOW_SERVICE).getDefaultDisplay().getRealMetrics(metrics);
-
-    // We need to detect the smallest dimention to detect dpi.
-    var width = parseInt(metrics.widthPixels / metrics.density,10);
-    var height = parseInt(metrics.heightPixels / metrics.density,10);
-    if (height < width) { return (height); }
-    return (width);
-}
-
+exports.sizeGroupings = function(val) {
+	if (Array.isArray(val)) {
+		if (val.length === 0) {
+			sizeGroupings = false;
+		} else {
+			groupings = val.splice(0);
+			groupings.sort(function (x, y) {
+				if (x < y) {
+					return 1;
+				}
+				else if (x > y) {
+					return -1;
+				}
+				return 0;
+			});
+			sizeGroupings = true;
+		}
+	} else {
+		if (sizeGroupings === !!val) {
+			return;
+		}
+		sizeGroupings = !!val;
+	}
+	deviceInfo = null;
+};
