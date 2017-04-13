@@ -73,3 +73,26 @@ This plugin in addition to doing .android or .ios; will create a .ios or .androi
 
 ### Notes
 There is also a related plugin called NativeScript-orientation that automatically will do the same type of CSS coolness for dealing with device orientation.
+
+If you want to style the Page view itself, you have to do
+
+```
+.ios {
+    color: red;
+}
+
+.android {
+    color: green;
+ }
+ ```
+ 
+ instead of 
+ ```
+.ios Page {
+    color: red;
+}
+
+.android Page {
+    color: green;
+ }
+ ```
