@@ -5,7 +5,7 @@
  * I do contract work in most languages, so let me solve your problems!
  *
  * Any questions please feel free to email me or put a issue up on the github repo
- * Version 1.4.0                                      Nathan@master-technology.com
+ * Version 3.0.0                                      Nathan@master-technology.com
  *********************************************************************************/
 "use strict";
 
@@ -71,11 +71,11 @@ const setDevice = function(args) {
     }
 
     if (currentPage) {
-        const data = currentPage.cssClass || '';
+        const data = currentPage.className || '';
         if (data.length) {
-            currentPage.cssClass = data + ' ' + device;
+            currentPage.className = data + ' ' + device;
         } else {
-            currentPage.cssClass = device;
+            currentPage.className = device;
         }
     }
 };

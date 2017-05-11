@@ -4,10 +4,10 @@
   "description": "A NativeScript plugin to deal with Declarative UI and Platform CSS",
   "main": "platformcss.js",
   "nativescript": {
-	"platforms": {
-		"android": "3.0.0",
-		"ios": "3.0.0"
-	}
+    "platforms": {
+      "android": "3.0.0",
+      "ios": "3.0.0"
+    }
   },
   "repository": {
     "type": "git",
