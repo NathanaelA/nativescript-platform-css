@@ -1,5 +1,8 @@
-/.idea
+.idea
+.vscode
 /demo/node_modules/
 /demo/platforms/
+node_modules
 *.tar
 *.tgz
+*.log
