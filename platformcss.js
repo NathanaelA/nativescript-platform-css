@@ -71,11 +71,11 @@ const setDevice = function(args) {
     }
 
     if (currentPage) {
-        const data = currentPage.cssClass || '';
+        const data = currentPage.className || '';
         if (data.length) {
-            currentPage.cssClass = data + ' ' + device;
+            currentPage.className = data + ' ' + device;
         } else {
-            currentPage.cssClass = device;
+            currentPage.className = device;
         }
     }
 };
