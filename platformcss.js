@@ -1,16 +1,16 @@
 /**********************************************************************************
- * (c) 2016, Master Technology
+ * (c) 2016, 2017 Master Technology
  * Licensed under the MIT license or contact me for a Support or Commercial License
  *
  * I do contract work in most languages, so let me solve your problems!
  *
  * Any questions please feel free to email me or put a issue up on the github repo
- * Version 1.4.0                                      Nathan@master-technology.com
+ * Version 1.5.0                                      Nathan@master-technology.com
  *********************************************************************************/
 "use strict";
 
 /* jshint camelcase: false */
-/* global android, NSStringm, nsPlatform */
+/* global android, NSString, nsPlatform */
 
 const Page = require('ui/page').Page;
 require('nativescript-globalevents');
