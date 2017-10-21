@@ -73,8 +73,22 @@ So on ios and windows the background would be red, on a android the color is gre
 You can set ALL the normal CSS values this way include width, height, font-size.  This allows you to reuse the majority of your css without having to have separate files.
 
 ## Enhanced modes
-This plugin in addition to doing .android or .ios; will create a .ios or .androidXXX (where XXX is the DPI of the screen) an
-It also sets the name of the device in the css; so Iphone X, will be `iphonex`
+This plugin in addition to doing the simple `.android` or `.ios`; will also create a `.iosXXX` or `.androidXXX` (where XXX is the DPI of the screen).  On iOS there is a fixed number of sizes, on Android you can enable sizeGroupings which will evaluate each device and put them inside a range of sizes to make it easier to handle screen sizes.
+`.sizeGroupings(true)` = Enable (This features defaults to being disabled).    The default groupings are [1280,1024,800,600,540,480,400,360,320]. If you want to have your own size groupings, you can do .sizeGroupings([size1,size2,size3,...]).  **The size groupings needs to be in largest to smallest, if you are using your own.** 
+The way it determines size groupings is that say the screen is 1100dpi, it would then get the grouping .android1280 because it is smaller than 1280 but bigger than 1024.
+Finally, it also sets the name of the device in the css; so Iphone X, will be `iphonex`. The device name will be lower cased, and anything not A-Z or 0-9 will be stripped out of the name.
+
+So it sets three separate css classes on startup of each page; you can use any (or all) of them to use as css rules.
+- .android | .ios
+- .androidXXX | .iosXXX
+- <deviceName>
+
+Example:
+`ios ios480 iphone6s`
+`android android1024 samsunggalaxytab5`
+
+### Demo
+The demo will show you the css class names it generated.  
 
 
 ### Notes
