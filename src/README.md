@@ -1,9 +1,15 @@
 [![npm](https://img.shields.io/npm/v/nativescript-platform-css.svg)](https://www.npmjs.com/package/nativescript-platform-css)
 [![npm](https://img.shields.io/npm/l/nativescript-platform-css.svg)](https://www.npmjs.com/package/nativescript-platform-css)
 [![npm](https://img.shields.io/npm/dt/nativescript-platform-css.svg?label=npm%20d%2fls)](https://www.npmjs.com/package/nativescript-platform-css)
+[![Twitter Follow](https://img.shields.io/twitter/follow/congocart.svg?style=social&label=Follow%20me)](https://twitter.com/congocart)
+
 
 # nativescript-platform-css
 A NativeScript plugin to deal with Declarative UI and Platform specific CSS
+
+## Developed by
+[![MasterTech](https://plugins.nativescript.rocks/i/mtns.png)](https://plugins.nativescript.rocks/mastertech-nstudio)
+
 
 ## License
 
@@ -70,6 +76,11 @@ You can set ALL the normal CSS values this way include width, height, font-size.
 This plugin in addition to doing .android or .ios; will create a .ios or .androidXXX (where XXX is the DPI of the screen) an
 
 
-
 ### Notes
 There is also a related plugin called NativeScript-orientation that automatically will do the same type of CSS coolness for dealing with device orientation.
+
+### Sponsor
+
+<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/HXrmpSuyowGyBLzwEVbqXdDa/NathanaelA/nativescript-platform-css'>
+  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/HXrmpSuyowGyBLzwEVbqXdDa/NathanaelA/nativescript-platform-css.svg' />
+</a>
