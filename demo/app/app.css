@@ -1,0 +1,7 @@
+﻿@import 'nativescript-theme-core/css/core.light.css';
+
+.copyright {
+    background-color:blue;
+    color: white;
+    font-size: 12pt;
+}

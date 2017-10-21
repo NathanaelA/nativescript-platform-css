@@ -1,6 +1,6 @@
 {
   "name": "nativescript-platform-css",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "A NativeScript plugin to deal with Declarative UI and Platform CSS",
   "main": "platformcss",
   "nativescript": {
@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "nativescript-globalevents": "^1.1.0",
-    "nativescript-platform": "^1.1.0"
+    "nativescript-platform": "^1.2.1"
   },
   "keywords": [
     "NativeScript", "platform", "css", "ios", "android"

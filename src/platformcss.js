@@ -42,7 +42,7 @@ const setDevice = function(args) {
                 break;
         }
 
-		const screen = nsPlatform.screen();
+        const screen = nsPlatform.screen;
 
 		if (sizeGroupings) {
 			let size = (screen.width < screen.height ? screen.width : screen.height);
@@ -65,6 +65,9 @@ const setDevice = function(args) {
 			}
 		}
 
+        // Add device name; this is use
+		device += " " + nsPlatform.device.name.replace(/[^a-z0-9]/gmi,'');
+
 		deviceInfo = device;
     } else {
         device = deviceInfo;
@@ -81,7 +84,7 @@ const setDevice = function(args) {
 };
 
 // Setup Events
-Page.on(Page.navigatingToEvent, setDevice);
+Page.on(Page.navigatingToFirst, setDevice);
 
 exports.sizeGroupings = function(val) {
 	if (Array.isArray(val)) {

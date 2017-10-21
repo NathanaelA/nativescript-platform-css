@@ -1,0 +1,25 @@
+{
+	"description": "Master Technology Demo",
+	"license": "SEE LICENSE IN LICENSE",
+	"readme": "See the README.MD",
+	"repository": "https://github.com/NathanaelA/nativescript-platform",
+	"nativescript": {
+		"id": "technology.master.demo",
+		"tns-android": {
+			"version": "3.2.0"
+		}
+	},
+	"dependencies": {
+		"nativescript-globalevents": "^1.2.1",
+		"nativescript-platform": "^1.2.1",
+		"nativescript-platform-css": "file:..\\src",
+		"nativescript-theme-core": "~1.0.2",
+		"tns-core-modules": "~3.2.0"
+	},
+	"devDependencies": {
+		"babel-traverse": "6.4.5",
+		"babel-types": "6.4.5",
+		"babylon": "6.4.5",
+		"lazy": "1.0.11"
+	}
+}
