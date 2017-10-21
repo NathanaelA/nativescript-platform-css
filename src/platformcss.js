@@ -5,7 +5,7 @@
  * I do contract work in most languages, so let me solve your problems!
  *
  * Any questions please feel free to email me or put a issue up on the github repo
- * Version 1.5.0                                      Nathan@master-technology.com
+ * Version 1.6.1                                      Nathan@master-technology.com
  *********************************************************************************/
 "use strict";
 
@@ -65,8 +65,9 @@ const setDevice = function(args) {
 			}
 		}
 
+		const deviceName = nsPlatform.device.name || '';
         // Add device name; this is use
-		device += " " + nsPlatform.device.name.replace(/[^a-z0-9]/gmi,'');
+		device += " " + deviceName.replace(/[^a-z0-9]/gmi,'').toLowerCase();
 
 		deviceInfo = device;
     } else {

@@ -74,6 +74,7 @@ You can set ALL the normal CSS values this way include width, height, font-size.
 
 ## Enhanced modes
 This plugin in addition to doing .android or .ios; will create a .ios or .androidXXX (where XXX is the DPI of the screen) an
+It also sets the name of the device in the css; so Iphone X, will be `iphonex`
 
 
 ### Notes
