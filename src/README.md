@@ -78,14 +78,17 @@ This plugin in addition to doing the simple `.android` or `.ios`; will also crea
 The way it determines size groupings is that say the screen is 1100dpi, it would then get the grouping .android1280 because it is smaller than 1280 but bigger than 1024.
 Finally, it also sets the name of the device in the css; so Iphone X, will be `iphonex`. The device name will be lower cased, and anything not A-Z or 0-9 will be stripped out of the name.
 
-So it sets three separate css classes on startup of each page; you can use any (or all) of them to use as css rules.
+So it sets three (or four) separate css classes on startup of each page; you can use any (or all) of them to use as css rules.
 - .android | .ios
 - .androidXXX | .iosXXX
 - <deviceName>
+- .softnav - (Android Only) if softnav is showing. 
+
+Please note these are calculated each page load.
 
 Example:
 `ios ios480 iphone6s`
-`android android1024 samsunggalaxytab5`
+`android android1024 samsunggalaxytab5`softnav
 
 ### Demo
 The demo will show you the css class names it generated.  

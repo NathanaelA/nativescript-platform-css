@@ -75,6 +75,11 @@ const setDevice = function(args) {
     }
 
     if (currentPage) {
+
+        if (nsPlatform.platform === nsPlatform.type.ANDROID && nsPlatform.hasSoftNav()) {
+            device += " softnav";
+        }
+
         const data = currentPage.className || '';
         if (data.length) {
             currentPage.className = data + ' ' + device;
