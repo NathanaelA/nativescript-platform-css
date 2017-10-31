@@ -57,6 +57,7 @@ It will automatically attach its methods to all the proper classes in the Native
 Well, guess what Cascading means in CSS?  
 Yes, this means this works now: 
 
+#### Plain Awesome NativeScript (PAN)
 ```css
 StackLayout {
   background-color: red;
@@ -67,7 +68,19 @@ StackLayout {
 }
 ```
 
+#### NativeScript Angular (NAN)
+```css
+StackLayout {
+  background-color: red;
+}
+
+/deep/ .android StackLayout {
+  background-color: green;
+}
+```
+
 So on ios and windows the background would be red, on a android the color is green.
+Please note, in Angular you MUST prefix the rule with `/deep/` for it to work correctly!
 
 ## Why use this?
 You can set ALL the normal CSS values this way include width, height, font-size.  This allows you to reuse the majority of your css without having to have separate files.
