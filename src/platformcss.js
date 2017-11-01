@@ -15,6 +15,7 @@
 const Page = require('ui/page').Page;
 require('nativescript-globalevents');
 require('nativescript-platform');
+const platform = require("tns-core-modules/platform");
 
 /**
  * Function that adds the proper class when we navigate to a new page
@@ -65,10 +66,12 @@ const setDevice = function(args) {
 			}
 		}
 
-		const deviceName = nsPlatform.device.name || '';
+        const deviceName = nsPlatform.device.name || '';
+        const deviceType = platform.device.deviceType;
         // Add device name; this is use
 		device += " " + deviceName.replace(/[^a-z0-9]/gmi,'').toLowerCase();
-
+        device += " " + deviceType.toLowerCase();
+        
 		deviceInfo = device;
     } else {
         device = deviceInfo;
