@@ -95,13 +95,14 @@ So it sets three (or four) separate css classes on startup of each page; you can
 - .android | .ios
 - .androidXXX | .iosXXX
 - <deviceName>
+- .phone | .tablet
 - .softnav - (Android Only) if softnav is showing. 
 
 Please note these are calculated each page load.
 
 Example:
-`ios ios480 iphone6s`
-`android android1024 samsunggalaxytab5`softnav
+`ios ios480 iphone6s phone`
+`android android1024 samsunggalaxytab5 tablet softnav`
 
 ### Demo
 The demo will show you the css class names it generated.  
