@@ -1,6 +1,6 @@
 {
   "name": "nativescript-platform-css",
-  "version": "1.6.5",
+  "version": "1.6.6",
   "description": "A NativeScript plugin to deal with Declarative UI and Platform CSS",
   "main": "platformcss",
   "nativescript": {
@@ -35,7 +35,12 @@
       "name": "Steve McNiven-Scott",
       "email": "steve@sitefinitysteve.com",
       "url": "https://github.com/sitefinitysteve"
-    }
+    },
+	{
+	  "name": "Dave Coffin",
+	  "email": "dave@davecoffin.com",
+	  "url": "https://github.com/davecoffin"
+	}
   ],
   "license": {
     "type": "MIT",

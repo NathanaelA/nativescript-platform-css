@@ -111,6 +111,10 @@ The demo will show you the css class names it generated.
 ### Notes
 There is also a related plugin called NativeScript-orientation that automatically will do the same type of CSS coolness for dealing with device orientation.
 
+### Contributors
+- Dave Coffin
+- Steve McNiven-Scott
+
 ### Sponsor
 
 <a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/HXrmpSuyowGyBLzwEVbqXdDa/NathanaelA/nativescript-platform-css'>
