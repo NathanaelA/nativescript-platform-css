@@ -79,8 +79,20 @@ StackLayout {
 }
 ```
 
+Or, I was recently informed that `:host` is a better way to do this as it has potentially less side effects. 
+```css
+StackLayout {
+  background-color: red;
+}
+
+.android :host StackLayout {
+  background-color: green;
+}
+```
+
+
 So on ios and windows the background would be red, on a android the color is green.
-Please note, in Angular you MUST prefix the rule with `/deep/` for it to work correctly!
+Please note, in Angular you MUST prefix the rule with `/deep/` or preferably `:host` for it to work correctly!
 
 ## Why use this?
 You can set ALL the normal CSS values this way include width, height, font-size.  This allows you to reuse the majority of your css without having to have separate files.
@@ -114,9 +126,3 @@ There is also a related plugin called NativeScript-orientation that automaticall
 ### Contributors
 - Dave Coffin
 - Steve McNiven-Scott
-
-### Sponsor
-
-<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/HXrmpSuyowGyBLzwEVbqXdDa/NathanaelA/nativescript-platform-css'>
-  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/HXrmpSuyowGyBLzwEVbqXdDa/NathanaelA/nativescript-platform-css.svg' />
-</a>
