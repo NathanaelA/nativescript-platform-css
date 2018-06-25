@@ -126,3 +126,4 @@ There is also a related plugin called NativeScript-orientation that automaticall
 ### Contributors
 - Dave Coffin
 - Steve McNiven-Scott
+- Jonathan Salomon

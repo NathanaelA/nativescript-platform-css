@@ -20,8 +20,8 @@
     "url": "https://github.com/nathanaela/nativescript-platform-css.git"
   },
   "dependencies": {
-    "nativescript-globalevents": "^1.2.1",
-    "nativescript-platform": "^1.2.2"
+    "nativescript-globalevents": "latest",
+    "nativescript-platform": "latest"
   },
   "keywords": [
     "NativeScript", "platform", "css", "ios", "android"
@@ -40,6 +40,11 @@
 	  "name": "Dave Coffin",
 	  "email": "dave@davecoffin.com",
 	  "url": "https://github.com/davecoffin"
+	},
+	{
+	  "name": "Jonathan Salomon",
+	  "email": "mail2joni@gmail.com",
+	  "url": "https://github.com/abhayastudios"
 	}
   ],
   "license": {
