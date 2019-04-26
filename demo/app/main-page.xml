@@ -10,7 +10,7 @@ https://docs.nativescript.org/ui/components.
     http://docs.nativescript.org/ui/action-bar
     -->
     <Page.actionBar>
-        <ActionBar title="ns-platfrom-css Plugin Demo" icon="" class="action-bar">
+        <ActionBar title="ns-platform-css Plugin Demo" icon="" class="action-bar">
         </ActionBar>
     </Page.actionBar>
     <!--
@@ -24,11 +24,12 @@ https://docs.nativescript.org/ui/components.
     core theme, such as p-20, btn, h2, and text-center. You can view a full list of the
     class names available for styling your app at https://docs.nativescript.org/ui/theme.
     -->
+
     <GridLayout rows="*,auto">
-    <StackLayout class="p-20">
-        <Label text="ns-platform-css" class="h1 text-center"/>
-        <TextView height="300" text="{{ data }}" editable="false" backgroundColor="#d3d3d3"/>
-    </StackLayout>
-        <Label tap="{{ tap }}" row="1" text="(c)2015-2017, Master Technology" class="text-center copyright"/>
+        <StackLayout class="p-20">
+            <Label text="ns-platform-css" class="h1 text-center"/>
+            <TextView height="300" text="{{ data }}" editable="false" backgroundColor="#d3d3d3"/>
+        </StackLayout>
+        <Label tap="{{ tap }}" row="1" text="(c)2015-2019, Master Technology" class="text-center copyright"/>
     </GridLayout>
 </Page>

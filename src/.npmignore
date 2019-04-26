@@ -3,6 +3,7 @@ demo/
 .gitignore
 .idea/
 docs/
+node_modules/
 *.tar
 *.tgz
 .npmignore

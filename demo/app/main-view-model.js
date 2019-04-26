@@ -1,18 +1,17 @@
-var Observable = require("data/observable").Observable;
-var nsPlatform = require('nativescript-platform');
-var utils = require('utils/utils');
+const Observable = require("tns-core-modules/data/observable").Observable;
+const utils = require('tns-core-modules/utils/utils');
+
 
 function createViewModel(page) {
-    var viewModel = new Observable();
+    const viewModel = new Observable();
 
-    var data = 'CSS Classes: \r\n---------------------\r\n' + page.className.replace(/\s/g,"\r\n");
+    const data = 'CSS Classes: \r\n---------------------\r\n' + page.className.replace(/\s/g,"\r\n");
     viewModel.set('data',data);
 
     viewModel.tap = function() {
         utils.openUrl("http://www.master.technology");
     };
 
-    return viewModel;
-}
+    return viewModel;}
 
 exports.createViewModel = createViewModel;

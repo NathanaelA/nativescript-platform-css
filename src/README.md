@@ -22,7 +22,7 @@ I also do contract work; so if you have a module you want built for NativeScript
 
 
 ## What is it?
-What this does is automatically add "android", "windows" or "ios" to the current **Page**'s cssClass variable, this allows you to do
+What this does is automatically add "android" or "ios" to the current **Page**'s cssClass variable, this allows you to do
 
     Declarative UI:
     <Page><Label class="awesome" text="Awesome"></Page>
@@ -30,9 +30,9 @@ What this does is automatically add "android", "windows" or "ios" to the current
     CSS:
     .ios .awesome { background-color: blue; }
     .android .awesome { background-color: green; }
-    .windows .awesome { background-color: red; }
 
-Automatically on iOS the color would be blue, on Android the color would be green and finally on Windows it would be red.
+
+Automatically on iOS the color would be blue, on Android the color would be green.
 
 
 ## Installation 
@@ -91,7 +91,7 @@ StackLayout {
 ```
 
 
-So on ios and windows the background would be red, on a android the color is green.
+So on ios the background would be red, on a android the color is green.
 Please note, in Angular you MUST prefix the rule with `/deep/` or preferably `:host` for it to work correctly!
 
 ## Why use this?
@@ -108,6 +108,7 @@ So it sets three (or four) separate css classes on startup of each page; you can
 - .androidXXX | .iosXXX
 - <deviceName>
 - .phone | .tablet
+- .notch - has a notch
 - .softnav - (Android Only) if softnav is showing. 
 
 Please note these are calculated each page load.

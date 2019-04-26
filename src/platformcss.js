@@ -1,18 +1,18 @@
 /**********************************************************************************
- * (c) 2016 - 2018 Master Technology
+ * (c) 2016-2019, Master Technology
  * Licensed under the MIT license or contact me for a Support or Commercial License
  *
  * I do contract work in most languages, so let me solve your problems!
  *
  * Any questions please feel free to email me or put a issue up on the github repo
- * Version 1.6.3                                      Nathan@master-technology.com
+ * Version 1.6.7                                      Nathan@master-technology.com
  *********************************************************************************/
 "use strict";
 
 /* jshint camelcase: false */
 /* global android, NSString, nsPlatform */
 
-const Page = require('ui/page').Page;
+const Page = require('tns-core-modules/ui/page').Page;
 require('nativescript-globalevents');
 require('nativescript-platform');
 
@@ -35,10 +35,6 @@ const setDevice = function(args) {
 
             case nsPlatform.type.ANDROID:
                 device = 'android android';
-                break;
-
-            case nsPlatform.type.WINDOWS:
-                device = 'windows';
                 break;
         }
 
@@ -68,6 +64,10 @@ const setDevice = function(args) {
 		const deviceName = nsPlatform.device.name || '';
         // Add device name; this is use
 		device += " " + deviceName.replace(/[^a-z0-9]/gmi,'').toLowerCase() + " " + nsPlatform.deviceType.toLowerCase();
+
+		if (nsPlatform.device.notch) {
+			device += " notch";
+		}
 
 		deviceInfo = device;
     } else {

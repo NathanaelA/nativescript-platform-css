@@ -1,6 +1,6 @@
 {
   "name": "nativescript-platform-css",
-  "version": "1.6.6",
+  "version": "1.6.7",
   "description": "A NativeScript plugin to deal with Declarative UI and Platform CSS",
   "main": "platformcss",
   "nativescript": {
