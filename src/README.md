@@ -109,7 +109,7 @@ So it sets three (or four) separate css classes on startup of each page; you can
 - <deviceName>
 - .phone | .tablet
 - .notch - has a notch
-- .softnav - (Android Only) if softnav is showing. 
+- .softnav - if softnav is showing. 
 
 Please note these are calculated each page load.
 
