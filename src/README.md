@@ -48,7 +48,7 @@ To use the module you just `require()` it:
 require( "nativescript-platform-css" );
 ```
 
-Notice: You do NOT need to keep a reference to it; and you only need to load it once.   I recommend you add it to your app.js file and forget about it.
+Notice: You do NOT need to keep a reference to it; and you only need to load it once.   I recommend you add it to your `app.js` file (or `main.ts` if Angular) and forget about it.
 
 It will automatically attach its methods to all the proper classes in the NativeScript library making it act as if they are built in.
 
