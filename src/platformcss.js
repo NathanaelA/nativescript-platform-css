@@ -91,7 +91,7 @@ const setDevice = function(args) {
 
 // Setup Events
 Page.on(Page.navigatingToFirst, setDevice);
-Page.on(Page.shownModallyFirst, setDevice);
+Page.on(Page.showingModallyFirst, setDevice);
 
 exports.sizeGroupings = function(val) {
 	if (Array.isArray(val)) {
