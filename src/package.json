@@ -1,6 +1,6 @@
 {
   "name": "nativescript-platform-css",
-  "version": "1.6.7",
+  "version": "1.6.9",
   "description": "A NativeScript plugin to deal with Declarative UI and Platform CSS",
   "main": "platformcss",
   "nativescript": {
@@ -24,7 +24,7 @@
     "nativescript-platform": "latest"
   },
   "keywords": [
-    "NativeScript", "platform", "css", "ios", "android"
+    "NativeScript", "platform", "css", "ios", "android", "notch", "softnav"
   ],
   "author": {
     "name": "Nathanael Anderson",

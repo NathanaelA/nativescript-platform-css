@@ -5,7 +5,7 @@
  * I do contract work in most languages, so let me solve your problems!
  *
  * Any questions please feel free to email me or put a issue up on the github repo
- * Version 1.6.7                                      Nathan@master-technology.com
+ * Version 1.6.9                                      Nathan@master-technology.com
  *********************************************************************************/
 "use strict";
 
@@ -61,12 +61,17 @@ const setDevice = function(args) {
 			}
 		}
 
-		const deviceName = nsPlatform.device.name || '';
+		const nsPlatformDevice = nsPlatform.device;
+		const deviceName = nsPlatformDevice.name || '';
         // Add device name; this is use
 		device += " " + deviceName.replace(/[^a-z0-9]/gmi,'').toLowerCase() + " " + nsPlatform.deviceType.toLowerCase();
 
-		if (nsPlatform.device.notch) {
+		if (nsPlatformDevice.notch) {
 			device += " notch";
+		}
+
+		if (nsPlatformDevice.softNav) {
+			device += " softnav";
 		}
 
 		deviceInfo = device;
@@ -75,10 +80,6 @@ const setDevice = function(args) {
     }
 
     if (currentPage) {
-
-        if (nsPlatform.platform === nsPlatform.type.ANDROID && nsPlatform.hasSoftNav()) {
-            device += " softnav";
-        }
 
         const data = currentPage.className || '';
         if (data.length) {
